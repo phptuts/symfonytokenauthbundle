@@ -2,14 +2,12 @@
 services:
     noahglaser.tokenauth.entity.repo.token:
         class: Doctrine\ORM\EntityRepository
-        factory_service: doctrine.orm.default_entity_manager
-        factory_method: getRepository
+        factory:  [doctrine.orm.default_entity_manager, getRepository]
         arguments:
             - NoahGlaser\TokenAuthBundle\Entity\Token
     noahglaser.tokenauth.entity.repo.client:
         class: Doctrine\ORM\EntityRepository
-        factory_service: doctrine.orm.default_entity_manager
-        factory_method: getRepository
+        factory:  [doctrine.orm.default_entity_manager, getRepository]
         arguments:
             - NoahGlaser\TokenAuthBundle\Entity\Client
 
